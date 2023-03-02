@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RadioButtonGroupInGrid.MainPage">
+
+    <Grid ColumnDefinitions="*,*" RowDefinitions="45, *, *">
+
+        <HorizontalStackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand">
+            <RadioButton x:Name="xmlInput" GroupName="inputType" IsChecked="True" Content="XML input"/>
+            <RadioButton x:Name="jsonInput" GroupName="inputType" IsChecked="False" Content="JSON input"/>
+            <RadioButton x:Name="noInput" GroupName="inputType" IsChecked="False" Content="No input"/>
+            <Button x:Name="newBtn" Text="New"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand">
+            <RadioButton x:Name="xsltCode" GroupName="codeType" IsChecked="True" Content="XSLT code"/>
+            <RadioButton x:Name="xqueryCode" GroupName="codeType" IsChecked="False" Content="XQuery code"/>
+            <RadioButton x:Name="xpathCode" GroupName="codeType" IsChecked="False" Content="XPath code"/>
+            <Button x:Name="evaluateBtn" Text="Evaluate"/>
+        </HorizontalStackLayout>
+
+        <Editor x:Name="inputEditor" Grid.Row="1" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" AutoSize="TextChanges" Placeholder="Enter input data (XML or JSON) here"
+                ></Editor>
+
+        <Editor x:Name="codeEditor" Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" AutoSize="TextChanges" Placeholder="Enter (XSLT or XQuery or XPath) code here"
+                ></Editor>
+
+        <Editor x:Name="resultEditor" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Fill" AutoSize="TextChanges" IsReadOnly="True" Placeholder="Result appears here"
+                />
+
+    </Grid>
+
+</ContentPage>
